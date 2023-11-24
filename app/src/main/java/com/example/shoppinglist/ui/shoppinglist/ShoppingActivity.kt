@@ -12,15 +12,17 @@ import com.example.shoppinglist.R
 import com.example.shoppinglist.other.ShoppingItemAdapter
 import kotlinx.android.synthetic.main.activity_shopping.fab
 import kotlinx.android.synthetic.main.activity_shopping.rvShoppingItems
+import org.kodein.di.KodeinAware
+import org.kodein.di.android.kodein
+import org.kodein.di.generic.instance
 
-class ShoppingActivity : AppCompatActivity() {
+class ShoppingActivity : AppCompatActivity(),KodeinAware {
+    override val kodein by kodein()
+    private val factory: ShoppingViewModelFactory by instance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shopping)
-
-        val databese  = ShoppingDatabese(this)
-        val repository = ShoppingRepository(databese)
-        val factory = ShoppingViewModelFactory(repository)
+        
 
         val viewModel = ViewModelProviders.of(this,factory).get(ShoppingViewModel::class.java)
 
