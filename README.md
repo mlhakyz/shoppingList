@@ -2,4 +2,4 @@
 Shopping list application developed with Kotlin using mvvm design pattern, Room, Kotlin Coroutines, Kodein
 
 
-<img src="https://github.com/mlhakyz/shoppingList/blob/main/shoppinglists.gif" width="auto">
+<img src="https://github.com/mlhakyz/shoppingList/blob/main/shoppinglists.gif" width="250" height="250">
